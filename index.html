@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/7d7d49f14e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-lime-200">
+    <div class="container mx-auto">
+        <h1 class="text-center text-4xl mt-4 mb-8 text-orange-600 font-bold">メモを作成してください❣</h1>
+        <div class="grid grid-cols-3 px-10 border-2 rounded-md mt-5 gap-2 p-10 bg-white">
+            <div class="col-span-1 p-2">
+                <div class="p-2">
+                    <ul class="space-y-2 list-notes">
+                       
+                    </ul>
+
+                    <p class="text-center list-note-empty-message">
+                        <span class="font-bold text-2xl text-green-500">空のリスト メモ</span>
+                        <button id="btn-addmore"
+                            class="mx-auto block bg-blue-600 text-white font-bold text-lg px-4 py-2 rounded-md"
+                            onclick="focusInputField()">さらに追加
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-span-2">
+                <form action="" onsubmit="return false" class="space-y-5">
+                    <div>
+                        <label for="txt-title" class="font-bold">タイトル</label>
+                        <input type="text" id="txt-title" class="border-2 rounded-md w-full p-2">
+                    </div>
+                    <div>
+                        <label for="txt-content" class="font-bold">コンテンツ</label>
+                        <textarea id="txt-content" class="border-2 rounded-md w-full p-2 h-[250px]"></textarea>
+                    </div>
+                    <button onclick="submitNoteData()"
+                        class="btn-submit mx-auto block bg-blue-600 text-white font-bold text-lg px-4 py-2 rounded-md">
+                        <span>追加</span>
+                        <span class="hidden">エディット</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="btn-edit-change-to-add" class="fixed bottom-0 right-0">
+            <button onclick="_resetForm()" class="rounded-full w-22 bg-blue-600 p-5 h-22">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.5 0C17.8868 0 18.2577 0.153646 18.5312 0.427136C18.8047 0.700627 18.9583 1.07156 18.9583 1.45833V16.0417H33.5417C33.9284 16.0417 34.2994 16.1953 34.5729 16.4688C34.8464 16.7423 35 17.1132 35 17.5C35 17.8868 34.8464 18.2577 34.5729 18.5312C34.2994 18.8047 33.9284 18.9583 33.5417 18.9583H18.9583V33.5417C18.9583 33.9284 18.8047 34.2994 18.5312 34.5729C18.2577 34.8464 17.8868 35 17.5 35C17.1132 35 16.7423 34.8464 16.4688 34.5729C16.1953 34.2994 16.0417 33.9284 16.0417 33.5417V18.9583H1.45833C1.07156 18.9583 0.700627 18.8047 0.427136 18.5312C0.153646 18.2577 0 17.8868 0 17.5C0 17.1132 0.153646 16.7423 0.427136 16.4688C0.700627 16.1953 1.07156 16.0417 1.45833 16.0417H16.0417V1.45833C16.0417 1.07156 16.1953 0.700627 16.4688 0.427136C16.7423 0.153646 17.1132 0 17.5 0Z"
+                        fill="white" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="src/main.js"></script>
+</body>
+
+</html>
